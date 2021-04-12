@@ -1,0 +1,179 @@
+.navigation {
+    //!large screen
+
+    &__list{
+        text-align: right;
+        margin: 0 2rem;
+        padding: 1rem 0 0;
+    }
+    a{
+        margin: 1rem 0.5rem;
+        color: #fff;
+        z-index: 3;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        padding: 0.3rem 0.6rem;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+    }
+    a.active , a:hover{
+        background-color: $color-primary-light;
+        color:#fff;
+        text-decoration: none;
+    }
+    //!small screen
+    &--sm{
+        &{
+            height: 100%;
+        }
+        i{
+            font-size: 2rem;
+            color: $color-secondary;
+        }
+
+
+    }
+}
+
+
+// !mobile
+.mobile-menu{
+    &{
+    opacity: 0;
+    visibility: hidden;
+    }
+    &.open{
+        opacity: 1;
+        visibility:visible;
+    }
+    @extend.overlay;
+
+    a.close-btn{
+        position: absolute;
+        right:400px !important;
+        top:0 !important;
+        background-color:$color-black;
+        color:#fff;
+        font-size: 1.2rem;
+        @include respond(tab-port) {
+            right:300px !important;
+        }
+
+    }
+
+    &-inner{
+        z-index: 99999999;
+        @extend .content;
+        background-color: $color-white !important;
+        width: 200px !important;
+        margin: 0;
+        padding: 1rem;
+        font-family: 'Baloo Da 2', cursive;
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transition:0.5s ease;
+        -webkit-transition:0.5s ease;
+        -moz-transition:0.5s ease;
+        -ms-transition:0.5s ease;
+        -o-transition:0.5s ease;
+        overflow-y: scroll;
+
+        &.show{
+            transform: translateX(0);
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+        }
+        
+        .menueS-list,.user-select{
+            .menueS-item{
+                border-bottom: 1px solid #dad9d9;
+                margin-bottom: 1rem;
+            }
+            a{
+                color:$color-black;
+                position: relative;
+                display: block;
+            
+            }
+            li{
+                
+                display: block;
+                padding-bottom: 0.5rem;
+            }
+            li.active > a,
+            li:hover > a{
+                color:$color-primary !important;
+            }
+        }
+        .user-select{
+            margin-top: 2.5rem;
+        }
+        .expand{
+            display: block;
+            height: 0;
+            max-width: 100%;
+            visibility: hidden;
+            overflow: hidden;
+            opacity: 0;
+            padding: 0.3rem;
+            opacity: 0;
+            transition:all 0.5s;
+            -webkit-transition:all 0.5s;
+            -moz-transition:all 0.5s;
+            -ms-transition:all 0.5s;
+            -o-transition:all 0.5s;
+            -webkit-animation:slideUp 1s normal;
+            animation:slideUp 1s normal;
+        }   
+        .show{
+            height: auto;
+            visibility: visible;
+            opacity: 1;
+            overflow: visible;
+            -webkit-animation:slideUp 1s normal;
+            animation:slideUp 1s normal;
+        }
+        .social_list{
+            display: flex;
+            list-style: none;
+            a{
+                border: 1px solid #e5e5e5;
+                font-size: 16px;
+                display: block;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                margin-right: 0.5rem;
+                transition: 0.5s;
+                -webkit-transition: 0.5s;
+                -moz-transition: 0.5s;
+                -ms-transition: 0.5s;
+                -o-transition: 0.5s;
+                color: $color-primary;
+                &:hover{
+                    background-color: $color-primary;
+                    color:#fff;
+                }
+            }
+            i{
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+    
+}

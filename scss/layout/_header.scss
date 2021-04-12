@@ -1,0 +1,25 @@
+.header {
+    &--path{
+        clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0 98%);
+        background-color: $color-primary;
+        height:100%;
+        width: 100%;
+        display: block;
+        margin-bottom: 0 !important;
+        html[dir="rtl"] &{
+            clip-path:polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+        }
+    }
+    &__link{
+        height: 0.7rem;
+    }
+    &__image{
+        width: 70%;
+        height: 70px;
+        margin-left: 2rem;
+        @include respond(tab-port) {
+            width:90%;
+            height:90px;
+        }
+    }
+}
