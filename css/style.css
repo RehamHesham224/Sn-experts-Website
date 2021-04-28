@@ -47,6 +47,10 @@ body {
   color: #ffffff;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 body {
   font-family: "stc font", sans-serif;
   font-weight: 400;
@@ -108,6 +112,7 @@ body {
   height: 100%;
   width: 100%;
   display: block;
+  position: relative;
   margin-bottom: 0 !important;
 }
 html[dir=rtl] .header--path {
@@ -115,23 +120,33 @@ html[dir=rtl] .header--path {
 }
 .header__link {
   height: 0.7rem;
+  color: #5a6165;
+  display: flex;
 }
-.header__image {
-  width: 70%;
+.header__logo {
+  width: 70px;
   height: 70px;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding: 0 0.3rem 0.3rem;
+  background-color: #f2f2f2;
   margin-left: 2rem;
 }
-@media only screen and (max-width: 56.25em) {
-  .header__image {
-    width: 90%;
-    height: 90px;
-  }
+.header__logo img {
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+.header__text {
+  text-align: right;
+  display: inline-block;
+  margin-left: 0.5rem;
+  line-height: 1.4;
 }
 
 .navigation__list {
   text-align: right;
-  margin: 0 2rem;
-  padding: 1rem 0 0;
+  margin: 0 1rem;
+  padding: 1.4rem 0;
 }
 .navigation a {
   margin: 1rem 0.5rem;
@@ -162,6 +177,15 @@ html[dir=rtl] .header--path {
 .navigation--sm i {
   font-size: 2rem;
   color: #0f465d;
+}
+
+#menuS-btn {
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
 }
 
 .mobile-menu {
@@ -287,7 +311,7 @@ html[dir=rtl] .header--path {
 
 .footer {
   color: #fff;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   display: flex;
   align-items: center;
   height: 100%;
@@ -319,8 +343,7 @@ html[dir=rtl] .header--path {
 
 .services {
   background-color: #f2f2f2;
-  clip-path: polygon(0 0%, 100% 0%, 100% 30%, 100% 100%, 69% 100%, 48% 89%, 29% 100%, 0 100%);
-  min-height: 100vh;
+  clip-path: polygon(0 0%, 100% 0%, 100% 30%, 100% 100%, 70% 100%, 50% 86%, 30% 100%, 0 100%);
   width: 100%;
   display: block;
   font-size: 0.9rem;
@@ -329,11 +352,11 @@ html[dir=rtl] .header--path {
   justify-content: center;
   align-items: center;
   margin-top: 0;
-  padding: 3rem 0 5rem 0;
+  padding: 4rem 0 5rem 0;
 }
 @media only screen and (max-width: 56.25em) {
   .services {
-    clip-path: polygon(0 0%, 100% 0%, 100% 30%, 100% 100%, 69% 100%, 48% 92%, 29% 100%, 0 100%);
+    clip-path: polygon(0 0%, 100% 0%, 100% 30%, 100% 100%, 70% 100%, 50% 92%, 30% 100%, 0 100%);
   }
 }
 html[dir=rtl] .services {
@@ -390,7 +413,7 @@ html[dir=rtl] .services {
   padding: 4rem 0;
 }
 .team__img {
-  margin: 0 45%;
+  display: block;
   border-radius: 0.3rem;
   -webkit-border-radius: 0.3rem;
   -moz-border-radius: 0.3rem;
@@ -427,12 +450,23 @@ html[dir=rtl] .team__box {
   -moz-border-radius: 2rem;
   -ms-border-radius: 2rem;
   -o-border-radius: 2rem;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 .team__left i {
   font-size: 1.4rem;
 }
+.team__left:hover {
+  background-color: #f27024;
+}
 .team__left.prim--icon {
   background-color: #0f465d;
+}
+.team__left.prim--icon:hover {
+  background-color: #f27024;
 }
 html[dir=rtl] .team__left {
   margin-left: 1rem;
@@ -484,6 +518,111 @@ html[dir=rtl] .team__left {
   display: block;
   width: 100%;
   height: 300px;
+}
+
+.intro {
+  background: linear-gradient(rgba(10, 42, 56, 0.9), rgba(10, 42, 56, 0.9)), url(../../img/laptop.jpg);
+  background-repeat: no-repeat;
+  background-position: center 70%;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.intro__content {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #fff;
+}
+.intro__img {
+  position: absolute;
+  bottom: -40%;
+  left: 23%;
+  border: 5px solid #ffffff;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .intro__img {
+    left: 15%;
+  }
+}
+@media only screen and (max-width: 51em) {
+  .intro__img {
+    left: 5%;
+    width: 130px;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .intro__img {
+    left: 0%;
+    bottom: -30%;
+    width: 130px;
+  }
+}
+
+.train {
+  background-color: #ebeff0;
+  padding: 120px 0 70px;
+}
+.train__desc span, .train__heading {
+  font-weight: bold;
+}
+.train__heading {
+  margin-bottom: 2.5rem;
+}
+.train__img {
+  width: 100%;
+  margin: 2.5rem 0;
+}
+
+.detail-tap > * {
+  text-align: center;
+  margin-top: -1rem;
+}
+.detail-tap a {
+  background-color: #ebeff0;
+  color: #0f465d;
+  border: 4px solid #fff;
+  padding: 0.5rem;
+  display: block;
+  font-weight: bold;
+}
+.detail-tap > .active a, .detail-tap > *:hover a {
+  background-color: #ffffff;
+  color: #f27024;
+}
+.detail-box {
+  padding: 70px 0;
+  line-height: 1.4;
+}
+.detail__list li a {
+  display: block;
+  margin: 1rem 0;
+  color: #0f465d;
+}
+.detail__list li a::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 10px solid #0f465d;
+  border-bottom: 5px solid transparent;
+  margin-right: 5px;
+}
+.detail__list li:hover a, .detail__list li.active a {
+  color: #f27024;
+}
+.detail__list li:hover a::before, .detail__list li.active a::before {
+  border-left: 10px solid #f27024;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,8 +3,8 @@
 
     &__list{
         text-align: right;
-        margin: 0 2rem;
-        padding: 1rem 0 0;
+        margin: 0 1rem;
+        padding: 1.4rem 0 ;
     }
     a{
         margin: 1rem 0.5rem;
@@ -45,6 +45,14 @@
 
 
 // !mobile
+#menuS-btn{
+    border: 1px solid #444;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
 .mobile-menu{
     &{
     opacity: 0;
