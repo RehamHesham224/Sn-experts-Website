@@ -8,11 +8,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   box-sizing: border-box;
-  // text-align: right;
+  
+  @include respond(big-desktop) {
+    // font-size: 2rem !important;
+  }
 }
 
 ::selection {
