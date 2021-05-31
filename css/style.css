@@ -523,6 +523,10 @@ html[dir=rtl] .team__left {
   height: 300px;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .intro {
   background: linear-gradient(rgba(10, 42, 56, 0.9), rgba(10, 42, 56, 0.9)), url(../img/laptop-2.png);
   background-repeat: no-repeat;
